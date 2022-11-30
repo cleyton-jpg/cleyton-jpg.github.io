@@ -1,0 +1,28 @@
+:root
+body{
+    text-align: center;
+    margin: 0;
+  }
+  
+  .stage {
+    width: 100vh;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 3px;
+    background-color: #2196F3;
+  }
+  .stage > div {
+    height: calc(100vh/3);
+    width: calc(100vh/3);
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  .squares{
+    font-size: 25vh;
+    text-align: center;
+    line-height: calc(50vh/3);
+  }
+  
+  .stage > div:hover{
+      opacity: 50%;
+  }
