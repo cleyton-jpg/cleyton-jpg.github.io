@@ -1,12 +1,14 @@
-:root
+:root{
+  --board:100vh
+}
 body{
     text-align: center;
     margin: 0;
   }
   
   .stage {
-    width: 100vh;
-    height: 100vh;
+    width: var(--board);
+    height: var(--board);
     display: grid;
     grid-template-columns: auto auto auto;
     gap: 3px;
