@@ -1,36 +1,38 @@
 let size = 10;
-let bomb = 10;
+let bomb = 15;
 let camp = new Array(size);
 
-camp.forEach(element => {
-    new Array(size)
-});
-
-
-
-console.log(camp);
-
-function updateArea(){
-
-    let area = [camp[corY +1][corX -1],camp[corY +1][corX],camp[corY +1][corX +1],
-                camp[corY][corX -1],camp[corY][corX +1],
-                camp[corY -1][corX -1],camp[corY -1][corX],camp[corY -1][corX +1]]
-
-    for (let index = 0; index < area.length; index++) {
-        if (area[index] != 'B') {
-            area[index]++
-        }
+for (let i = 0; i < camp.length; i++) {
+    camp[i] = new Array(size);
+    for (let j = 0; j < camp.length; j++) {
+        camp[i][j] = 0;
     }
 }
 
 function cordenates(param) {
-    return Math.random() * (param - 1);
+    return Math.floor(Math.random() * (param));
 }
 
 for (let index = 0; index < bomb;) {
-    let corY = cordenates(bomb)
-    let corX = cordenates(bomb)
-    if (camp[corY][corX] != 'B') {
-        updateArea();
+    var Y = cordenates(camp.length);
+    var X = cordenates(camp.length);
+    if (camp[Y][X] != 'B') {
+        camp[Y][X] = 'B';
+        var area = [Y +1, X -1, Y +1, X, Y +1, X +1,
+                    Y, X -1, Y, X +1,
+                    Y -1, X -1, Y -1, X, Y -1, X +1]
+        
+        for (let index = 0; index < area.length;) {
+            if ((area[index] && area[index + 1] < size) &&
+                (area[index] && area[index + 1] >= 0)) {
+                if(camp[area[index]][area[index + 1]] != 'B')
+                {camp[area[index]][area[index + 1]]++}
+            }
+            index +=2
+        }
+        index++
     }
+}
+for (let index = 0; index < camp.length; index++) {
+    console.log(camp[index].toString());
 }
