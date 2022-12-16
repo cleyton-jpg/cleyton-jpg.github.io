@@ -19,7 +19,9 @@ a{
 a:hover{
     color: gold;
 }
-
+card{
+    display: block;    
+}
 header{
     display: block;
     background-color: black;
