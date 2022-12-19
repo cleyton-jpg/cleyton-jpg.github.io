@@ -1,6 +1,3 @@
-var slider = document.getElementById("mySlider");
-var size = slider.value;
-
 function createDiv(className, id) {
     // create a new div element
     var div = document.createElement("div");
@@ -16,3 +13,8 @@ function createDiv(className, id) {
     // add the div to the document
     document.body.appendChild(div);
 }
+for (let index = 0; index < camp; index++) {
+    const element = array[index];
+    
+}
+createDiv(card, )

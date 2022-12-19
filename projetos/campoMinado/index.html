@@ -19,13 +19,27 @@
         </div>
     </header>
     <div id="control">
+        <label for="sizeSlider">size:</label>
         <input id="sizeSlider" type="range" min="10" max="50" value="10" step="5">
+        <span id="sizeValue">10</span>
+        <label for="bombSlider">bomb:</label>
         <input id="bombSlider" type="range" min="20" max="50" value="20" step="5">
+        <span id="bombValue">20</span>
     </div>
     <div id="board">
         
     </div>
-    <script src="script.js"></script>
+    <script>
+        var size = document.getElementById("sizeSlider");
+        var bomb = document.getElementById("bombSlider");
+        sizeSlider.addEventListener('input', () => {
+            sizeValue.textContent = sizeSlider.value;
+        });
+        bombSlider.addEventListener('input', () => {
+            bombValue.textContent = bombSlider.value;
+        });
+    </script>
+        <script type="text/javascript" src="/gameLogic.js"></script>
 </body>
 
 </html>
